@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* 🌊 Custom CSS Variables */
+:root {
+  --color-ocean: #00AEEF;
+  --color-surface: #1A1D24;
+  --color-background: #0F1117;
+  --color-violet: #9D6CFF;
+
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* 🌌 Base Styles */
+body {
+  background-color: var(--color-background);
+  color: white;
+  font-family: var(--font-sans);
+  @apply antialiased;
+}
+
+/* 🧩 Utility Classes (optional custom) */
+.text-ocean {
+  color: var(--color-ocean);
+}
+.bg-ocean {
+  background-color: var(--color-ocean);
+}
+.bg-surface {
+  background-color: var(--color-surface);
+}
+.bg-background {
+  background-color: var(--color-background);
+}
+.text-violet {
+  color: var(--color-violet);
+}
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* 🔧 Example rounded universal */
+.rounded-full {
+  border-radius: 9999px;
+}
