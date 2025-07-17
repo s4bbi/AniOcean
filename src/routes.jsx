@@ -8,6 +8,7 @@ import MovieStream from "./pages/MovieStream";
 import Stream from "./pages/Stream";
 import Profile from "./pages/Profile";
 import Community from "./pages/Community";
+import News from "./pages/News";
 import "./index.css"
 
 export default function AppRoutes() {
@@ -21,6 +22,7 @@ export default function AppRoutes() {
       <Route path="/watch/:id" element={<Stream />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/community" element={<Community />} />
+      <Route path="/news" element={<News />} />
     </Routes>
   );
 }
