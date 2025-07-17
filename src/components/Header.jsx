@@ -76,7 +76,7 @@ export default function Header() {
 
   return (
     <>
-      <header className=" top-4 z-50 bg-transparent mx-4 md:mx-8 lg:mx-16 font-nM">
+      <header className="absolute top-0 left-0 w-full z-50 bg-transparent px-4 md:px-8 lg:px-16 font-nM mt-2">
         <div className="w-full container mx-auto sm:px-6 md:px-6 lg:px-8 py-3 flex items-center relative">
           {/* Left: Logo (desktop only) */}
           <Link

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* 🌊 Custom CSS Variables */
 :root {
   --color-ocean: #00AEEF;
