@@ -14,7 +14,7 @@ export default function Login() {
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#00AEEF] rounded-full blur-[120px] opacity-50 z-0"></div>
 
       {/* Container */}
-      <div className="z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 mt-10 md:mt-0 md:items-stretch">
+      <div className="z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 mt-10 md:items-stretch">
 
         {/* Form Section */}
         <div className="w-full md:w-2/5 h-[570px] bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 sm:p-10 shadow-md text-white font-pR flex flex-col justify-center">
