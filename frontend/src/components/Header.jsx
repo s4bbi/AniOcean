@@ -119,9 +119,13 @@ export default function Header() {
             <button className="p-2 rounded-full bg-background hover:bg-ocean transition">
               <Bot size={20} className="text-white" />
             </button>
-            <button className="px-4 py-1.5 bg-ocean hover:bg-ocean/80 text-white rounded-full text-sm transition">
-              Login
-            </button>
+            <Link
+            to="/signup"
+            className="px-4 py-1.5 bg-ocean hover:bg-ocean/80 text-white rounded-full text-sm transition"
+          >
+            Login
+          </Link>
+
           </div>
 
           {/* Mobile: Hamburger + Logo + actions */}
@@ -152,9 +156,14 @@ export default function Header() {
               <button className="p-2 rounded-full bg-background hover:bg-ocean transition">
                 <Bot size={20} className="text-white" />
               </button>
-              <button className="px-4 py-1.5 bg-ocean hover:bg-ocean/80 text-white rounded-full text-sm transition">
-                Login
-              </button>
+                <Link
+                  to="/signup"
+                  className="px-4 py-1.5 bg-ocean hover:bg-ocean/80 text-white rounded-full text-sm transition"
+                >
+                  Login
+                </Link>
+
+
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import logo from "../assets/aniocean_logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-white px-6 py-10 mt-20 font-pR">
+    <footer className="bg-background text-white px-6 py-10 font-pR">
       <div className="max-w-7xl mx-auto flex flex-col space-y-10">
         {/* Top Section: Logo + Navigation Links */}
         <div className="flex flex-col lg:flex-row justify-between items-center">

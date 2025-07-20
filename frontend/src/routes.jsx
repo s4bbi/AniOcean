@@ -10,6 +10,8 @@ import Profile from "./pages/Profile";
 import Community from "./pages/Community";
 import News from "./pages/News";
 import "./index.css"
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 export default function AppRoutes() {
   return (
@@ -23,6 +25,8 @@ export default function AppRoutes() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/community" element={<Community />} />
       <Route path="/news" element={<News />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 }
