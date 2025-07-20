@@ -12,11 +12,16 @@ import News from "./pages/News";
 import "./index.css"
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import DMCA from "./pages/DMCA";
 
 export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/movies" element={<Movies />} />
       <Route path="/catalogue" element={<Catalogue />} />
       <Route path="/anime/:id" element={<AnimeDetails />} />
@@ -25,8 +30,9 @@ export default function AppRoutes() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/community" element={<Community />} />
       <Route path="/news" element={<News />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/tos" element={<TermsOfService />} />
+      <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+      <Route path="/dmca" element={<DMCA />} />
     </Routes>
   );
 }

@@ -27,8 +27,8 @@ export default function Footer() {
             </div>
 
             <div className="space-y-1">
-              <Link to="/terms" className="hover:text-[#00AEEF] block">Terms of Service</Link>
-              <Link to="/privacy" className="hover:text-[#00AEEF] block">Privacy Policy</Link>
+              <Link to="/tos" className="hover:text-[#00AEEF] block">Terms of Service</Link>
+              <Link to="/privacypolicy" className="hover:text-[#00AEEF] block">Privacy Policy</Link>
               <Link to="/dmca" className="hover:text-[#00AEEF] block">DMCA</Link>
             </div>
 
@@ -62,9 +62,9 @@ export default function Footer() {
 
         {/* Footer Bottom Section */}
         <div className="text-center text-gray-400 text-xs pt-6 border-t border-gray-700">
-          <p>© 2025 Anime Ocean. All rights reserved.</p>
+          <p>© 2025 AniOcean. All rights reserved.</p>
           <p className="mt-1">
-            Disclaimer: This site AnimeOcean does not store any files on its server.
+            Disclaimer: This site AniOcean does not store any files on its server.
             All contents are provided by non-affiliated third parties.
           </p>
         </div>
