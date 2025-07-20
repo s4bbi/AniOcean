@@ -45,7 +45,7 @@ export default function Schedule() {
   const [activeDay, setActiveDay] = useState(0);
 
   return (
-    <section id="schedule" className="max-w-7xl mx-auto py-12 bg-background text-white px-6 sm:px-0 relative">
+    <section id="schedule" className="max-w-screen py-12 bg-background text-white px-6 md:px-18 relative h-full">
       {/* Heading */}
       <h2 className="text-2xl font-pM mb-6 flex items-center gap-3">
         <span className="w-1 h-6 bg-ocean rounded-sm inline-block"></span>

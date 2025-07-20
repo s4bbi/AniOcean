@@ -17,7 +17,7 @@ export default function FeaturedAnime() {
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20 z-0" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-0 py-20">
+      <div className="relative z-10 max-w-screen mx-auto px-6 md:px-18 py-20">
         {/* Section title */}
         <h2 className="text-2xl font-pM mb-6 flex items-center gap-3">
           <span className="w-1 h-6 bg-ocean rounded-sm inline-block"></span>

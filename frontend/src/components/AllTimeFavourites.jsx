@@ -64,7 +64,7 @@ export default function AllTimeFavourites() {
   };
 
   return (
-    <section id="latest" className="max-w-7xl mx-auto py-12 bg-background text-white px-6 sm:px-0 relative font-nM">
+    <section id="latest" className="max-w-screen py-12 bg-background text-white px-6 md:px-18">
       {/* Section Heading */}
       <h2 className="text-2xl font-pM mb-6 flex items-center gap-3">
         <span className="w-1 h-6 bg-ocean rounded-sm inline-block"></span>

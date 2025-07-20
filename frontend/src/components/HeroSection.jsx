@@ -7,13 +7,13 @@ import { MdPlayArrow, MdAdd } from "react-icons/md";
 export default function HeroSection() {
   return (
     <section
-        className="h-screen w-full bg-cover bg-center text-white px-6 sm:px-0"
+        className="h-screen w-full bg-cover bg-center text-white px-6 md:px-8 lg:px-16 "
         style={{
             backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.4) 70%), url(${bg})`,
         }}
     >
       {/* Content Wrapper */}
-      <div className="max-w-7xl mx-auto pt-[80px] pb-24 flex flex-col justify-center h-full z-10">
+      <div className="max-w-7xl mx-auto pt-[80px] pb-24 flex flex-col justify-center h-full z-10 ">
         <div className="mb-2 text-lg text-[#D93036] font-pSB">#1 Trending now</div>
         <h1 className="text-4xl md:text-8xl font-bN leading-tight mb-4">ONE PIECE</h1>
 
