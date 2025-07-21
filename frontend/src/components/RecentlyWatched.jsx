@@ -23,7 +23,7 @@ export default function RecentlyWatched() {
     <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
       <div className="flex items-center gap-3 mb-6">
         <span className="w-1.5 h-6 bg-ocean rounded" />
-        <h2 className="text-2xl font-bold text-white">Recently Watched</h2>
+        <h2 className="text-2xl font-pM text-white">Recently Watched</h2>
       </div>
       <div className="flex gap-6 overflow-x-auto pb-4">
         {recentlyWatchedData.map((item) => (
@@ -43,7 +43,7 @@ export default function RecentlyWatched() {
                 ></div>
               </div>
             </div>
-            <p className="text-white text-center mt-3 font-semibold">{item.title}</p>
+            <p className="text-white text-center mt-3 font-nM">{item.title}</p>
           </div>
         ))}
       </div>
