@@ -13,7 +13,7 @@ export default function Movies() {
       <main className="flex flex-col items-center w-full">
         <div className="w-full max-w-7xl px-0 md:px-4 lg:px-8">
           {/* Hero section with negative left margin to overlap under nav on large screens */}
-          <section id="movies-hero" className="relative z-10 mt-0 md:mt-4">
+          <section id="movies-hero" className="relative z-10 mt-0 md:mt-4 min-h-[220px] md:min-h-[400px] lg:min-h-[480px]">
             <MoviesHero />
           </section>
           <section id="recently-watched" className="w-full">

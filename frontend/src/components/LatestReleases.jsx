@@ -38,7 +38,7 @@ export default function LatestReleases() {
     <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-8 w-full">
       <div className="flex items-center gap-3 mb-6">
         <span className="w-1.5 h-6 bg-ocean rounded" />
-        <h2 className="text-2xl font-bold text-white">Latest Releases</h2>
+        <h2 className="text-2xl font-pM text-white">Latest Releases</h2>
       </div>
       <div className="relative">
         <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 hide-scrollbar">
@@ -58,7 +58,7 @@ export default function LatestReleases() {
                   </button>
                 </div>
               </div>
-              <p className="text-white text-center mt-3 font-semibold text-xs sm:text-sm truncate">
+              <p className="text-white text-center mt-3 font-nM text-xs sm:text-sm truncate">
                 {movie.title}
               </p>
             </div>

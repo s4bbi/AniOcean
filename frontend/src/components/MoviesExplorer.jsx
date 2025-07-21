@@ -61,9 +61,9 @@ export default function MoviesExplorer() {
 
   const MovieCard = ({ movie }) => (
     <div className="flex flex-col items-center">
-      <div className="relative w-32 h-48 rounded-2xl overflow-hidden group shadow-lg bg-[#23242B] flex items-center justify-center">
+      <div className="relative w-32 h-48 rounded-2xl overflow-hidden group shadow-lg bg-[#23242B] flex items-center justify-center before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-1/2 before:pointer-events-none before:opacity-0 group-hover:before:opacity-100 before:transition-opacity before:duration-200 before:bg-gradient-to-t before:from-blue-500/70 before:to-transparent">
         <span className="text-white text-sm font-bold px-2 text-center">{movie.title}</span>
-        <div className="absolute bottom-2 left-2 right-2 px-2 py-1 bg-blue-600/80 rounded-xl text-white text-xs font-semibold flex items-center justify-between">
+        <div className="absolute bottom-2 left-2 right-2 px-2 py-1 rounded-xl text-white text-xs font-nM flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <span>⭐ {movie.rating}</span>
           <span>MOVIE</span>
         </div>
@@ -73,7 +73,7 @@ export default function MoviesExplorer() {
           </button>
         </div>
       </div>
-      <p className="text-sm text-center leading-tight text-white mt-2 w-28 truncate">
+      <p className="text-sm text-center leading-tight text-white mt-2 w-28 truncate font-nM">
         {movie.title}
       </p>
     </div>
@@ -84,16 +84,17 @@ export default function MoviesExplorer() {
       <div className="bg-[#0F1117] py-6 px-8 rounded-2xl shadow-lg mb-10">
         <div className="flex items-center gap-3 mb-6">
           <span className="w-1.5 h-6 bg-ocean rounded" />
-          <h2 className="text-2xl font-bold text-white">Search your favs</h2>
+          <h2 className="text-2xl font-pM text-white mb-6">Search your favs</h2>
         </div>
-        <form className="grid grid-cols-3 md:grid-cols-5 gap-2 items-end" onSubmit={handleApply} autoComplete="off">
-          {filters.map((filter) => (
-            <div key={filter.label} className="flex flex-col items-start min-w-0">
-              <label className="text-[11px] text-[#b0b3b8] mb-1 pl-2 uppercase tracking-wide font-semibold hidden md:block">
+        {/* Sort and Apply Row */}
+        <form className="w-full grid grid-cols-3 md:flex md:flex-row md:items-end gap-2 md:gap-x-3" onSubmit={handleApply} autoComplete="off">
+          {filters.map((filter, idx) => (
+            <div key={filter.label} className="flex flex-col items-start min-w-0 col-span-1 md:w-28 mb-0">
+              <label className="text-[11px] text-[#b0b3b8] mb-1 pl-2 uppercase tracking-wide font-pM block">
                 {filter.label}
               </label>
               <select
-                className="bg-[#e5e7eb] text-[#181A20] px-3 py-2 rounded-full border-none focus:ring-2 focus:ring-blue-500 font-semibold text-xs md:text-sm min-w-0 w-full shadow-sm"
+                className="bg-[#e5e7eb] text-[#181A20] px-3 py-2 rounded-full border-none focus:ring-2 focus:ring-blue-500 font-pM text-xs md:text-sm min-w-0 w-full shadow-sm"
                 value={selectedFilters[filter.label] || filter.options[0]}
                 onChange={(e) => handleFilterChange(filter.label, e.target.value)}
               >
@@ -105,12 +106,14 @@ export default function MoviesExplorer() {
               </select>
             </div>
           ))}
-          <button
-            type="submit"
-            className="col-span-3 md:col-span-1 flex items-center justify-center bg-ocean hover:bg-ocean/90 text-white px-6 py-2 rounded-full shadow-md transition font-semibold text-xs md:text-sm mt-2 md:mt-0"
-          >
-            APPLY
-          </button>
+          <div className="flex col-span-1 md:w-28 justify-center md:justify-end mt-2 md:mt-0 md:ml-4">
+            <button
+              type="submit"
+              className="bg-ocean hover:bg-ocean/90 text-white px-6 py-2 rounded-full shadow-md transition font-pM text-xs md:text-sm w-full md:w-auto min-w-0"
+            >
+              APPLY
+            </button>
+          </div>
         </form>
       </div>
 
@@ -125,7 +128,7 @@ export default function MoviesExplorer() {
       </div>
 
       <div className="max-w-7xl mx-auto mb-8">
-        <div className="flex gap-6 mb-6 pl-1 text-lg font-bold uppercase text-gray-400">
+        <div className="flex gap-6 mb-6 pl-1 text-lg font-pM uppercase text-gray-400">
           {[
             { key: "ANIME MOVIES", value: "movies" },
             { key: "ORIGINALS", value: "originals" },
@@ -134,7 +137,7 @@ export default function MoviesExplorer() {
             <button
               key={tab.value}
               onClick={() => setActiveTab(tab.value)}
-              className={`${activeTab === tab.value ? "text-white" : ""}`}
+              className={`${activeTab === tab.value ? "text-white font-pM" : "font-pM"}`}
             >
               {tab.key}
             </button>

@@ -87,11 +87,9 @@ export default function MoviesHero() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
           <div className="relative z-10 px-6 sm:px-8 lg:px-10 pt-16 sm:pt-20 md:pt-0 pb-6 sm:pb-8 flex flex-col justify-end h-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-4 sm:mx-6 md:ml-16 lg:ml-24 md:p-0 -translate-y-14 sm:-translate-y-12 md:-translate-y-6 lg:-translate-y-20 xl:-translate-y-24">
-            <p className="text-red-500 font-bold text-sm sm:text-lg mb-2">{item.tag}</p>
-            <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight sm:tracking-normal mb-4 leading-tight break-normal">
-              {item.title}
-            </h1>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-300 mb-4">
+            <p className="text-red-500 font-pSB text-sm sm:text-lg mb-2">{item.tag}</p>
+            <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bN uppercase tracking-tight sm:tracking-normal mb-4 leading-tight break-normal">{item.title}</h1>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-300 mb-4 group">
               <span className="font-semibold text-yellow-400">{item.status}</span>
               <span className="flex items-center gap-1.5">
                 <FaCalendarAlt /> {item.date}
@@ -100,15 +98,13 @@ export default function MoviesHero() {
               <span>{item.genres}</span>
               <span>{item.subDub}</span>
             </div>
-            <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
-              {item.description}
-            </p>
-            <div className="flex items-center gap-3 sm:gap-4 flex-wrap sm:flex-nowrap">
-              <button className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 text-sm md:px-6 md:py-3 md:text-base rounded-full font-semibold transition">
+            <p className="text-gray-200 text-sm sm:text-base font-nM leading-relaxed mb-6 sm:mb-8">{item.description}</p>
+            <div className="flex items-center gap-3 sm:gap-4 flex-wrap sm:flex-nowrap mt-2">
+              <button className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 text-sm md:px-6 md:py-3 md:text-base rounded-full font-nM transition">
                 <FaPlay />
                 <span>WATCH NOW</span>
               </button>
-              <button className="flex items-center gap-2 bg-gray-700/60 hover:bg-gray-700/90 px-4 py-2 text-sm md:px-6 md:py-3 md:text-base rounded-full font-semibold transition border border-gray-600">
+              <button className="flex items-center gap-2 bg-gray-700/60 hover:bg-gray-700/90 px-4 py-2 text-sm md:px-6 md:py-3 md:text-base rounded-full font-nM transition border border-gray-600">
                 <FaPlus />
                 <span>ADD TO WATCHLIST</span>
               </button>
