@@ -1,6 +1,6 @@
 import React from "react";
 import { MdPlayArrow, MdAdd } from "react-icons/md";
-import bgImg from "../assets/images/featured.jpg"; // Update this path accordingly
+import bgImg from "../../assets/images/featured.jpg"; // Update this path accordingly
 
 export default function FeaturedAnime() {
   return (

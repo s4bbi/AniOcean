@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { MdPlayArrow } from "react-icons/md";
+import React, { useState, useRef } from "react";
+import { MdPlayArrow, MdChevronRight } from "react-icons/md";
 
 const days = [
   { date: "JUL 6th", day: "SUN" },
@@ -43,6 +43,7 @@ const scheduleData = {
 
 export default function Schedule() {
   const [activeDay, setActiveDay] = useState(0);
+  const scrollRef = useRef(null);
 
   return (
     <section id="schedule" className="max-w-screen py-12 bg-background text-white px-6 md:px-18 relative h-full">
@@ -52,8 +53,41 @@ export default function Schedule() {
         Schedule
       </h2>
 
-      {/* Day Selector */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-10">
+      {/* Day Selector - Scrollable on small screens */}
+      <div className="lg:hidden relative overflow-x-hidden mb-10">
+        <div
+          ref={scrollRef}
+          className="flex gap-4 px-2 overflow-x-auto scrollbar-hide"
+        >
+          {days.map(({ date, day }, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveDay(index)}
+              className={`min-w-[90px] text-center border-b-4 pb-1 transition-all duration-200 font-bN tracking-wide ${
+                activeDay === index
+                  ? "text-white border-[#00AEEF]"
+                  : "text-white/40 border-transparent hover:border-white/30"
+              }`}
+            >
+              <div className="text-xs text-white/60 font-pM">{date}</div>
+              <div className="text-base">{day}</div>
+            </button>
+          ))}
+        </div>
+
+        {/* Next Button */}
+        <button
+          onClick={() =>
+            scrollRef.current?.scrollBy({ left: 120, behavior: "smooth" })
+          }
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#00AEEF] p-1 rounded-full shadow-md hover:bg-[#0095cc] z-10"
+        >
+          <MdChevronRight size={20} className="text-white" />
+        </button>
+      </div>
+
+      {/* Day Selector - Grid for large screens */}
+      <div className="hidden lg:grid grid-cols-7 gap-4 mb-10">
         {days.map(({ date, day }, index) => (
           <button
             key={index}

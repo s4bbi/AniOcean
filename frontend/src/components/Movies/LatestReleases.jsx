@@ -2,46 +2,7 @@ import React, { useRef } from "react";
 import { MdPlayArrow } from "react-icons/md";
 import { FaChevronRight } from "react-icons/fa";
 
-const latestAnime = [
-  {
-    title: "Toilet-Bound Hanako-kun Season 2 Part 2",
-    img: "/path/to/image1.jpg",
-    rating: 8.1,
-    tag: "TV",
-  },
-  {
-    title: "Gachiakuta",
-    img: "/path/to/image2.jpg",
-    rating: 7.6,
-    tag: "TV",
-  },
-  {
-    title: "DAN DA DAN Season 2",
-    img: "/path/to/image3.jpg",
-    rating: 8.6,
-    tag: "TV",
-  },
-  {
-    title: "The Demon Hunter Season 2",
-    img: "/path/to/image4.jpg",
-    rating: 7.3,
-    tag: "TV",
-  },
-  {
-    title: "Call of the Night Season 2",
-    img: "/path/to/image5.jpg",
-    rating: 7.9,
-    tag: "TV",
-  },
-  {
-    title: "Rascal Does Not Dream of Santa Claus",
-    img: "/pth/to/image6.jpg",
-    rating: 8.2,
-    tag: "TV",
-  },
-];
-
-export default function LatestEpisodes() {
+export default function LatestReleases({ movies }) {
   const carouselRef = useRef();
 
   const scrollNext = () => {
@@ -51,40 +12,35 @@ export default function LatestEpisodes() {
   };
 
   return (
-    <section id="latest" className="max-w-screen py-12 bg-background text-white px-6 md:px-18">
-      {/* Section Heading */}
+    <section className="mb-8 max-w-screen bg-background text-white px-6 md:px-18 pb-12 relative">
       <h2 className="text-2xl font-pM mb-6 flex items-center gap-3">
         <span className="w-1 h-6 bg-ocean rounded-sm inline-block"></span>
-        Latest Episodes
+        Latest Releases
       </h2>
 
-      {/* Carousel */}
       <div className="relative">
         <div
           ref={carouselRef}
           className="flex gap-6 overflow-x-auto hide-scrollbar scroll-smooth pr-8"
         >
-          {latestAnime.map((anime, index) => (
+          {movies.map((movie) => (
             <div
-              key={index}
-              className="flex-shrink-0 w-40 sm:w-44 md:w-48 lg:w-52 xl:w-56"
+              key={movie.id}
+              className="flex-shrink-0 w-40 sm:w-44 md:w-48 cursor-pointer"
             >
-              {/* Poster */}
               <div
                 className="relative w-full h-60 rounded-2xl overflow-hidden mb-2 group"
                 style={{
-                  backgroundImage: `url(${anime.img})`,
+                  backgroundImage: `url(${movie.image})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
               >
-                {/* Rating and Tag on Hover */}
-                {anime.rating && anime.tag && (
-                  <div className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition px-2 py-1 bg-ocean/80 rounded-xl text-white text-xs font-semibold flex items-center justify-between">
-                    <span>⭐ {anime.rating}</span>
-                    <span>{anime.tag}</span>
-                  </div>
-                )}
+                {/* Rating and (optional) tag on hover */}
+                <div className="font-pL absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition px-2 py-1 bg-ocean/80 rounded-xl text-white text-xs font-semibold flex items-center justify-between">
+                  <span>⭐ {movie.rating ?? "N/A"}</span>
+                  {movie.tag && <span>{movie.tag}</span>}
+                </div>
 
                 {/* Play button overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
@@ -94,9 +50,8 @@ export default function LatestEpisodes() {
                 </div>
               </div>
 
-              {/* Title */}
-              <p className="text-sm text-center leading-tight text-white">
-                {anime.title}
+              <p className="text-sm text-center leading-tight text-white truncate font-nM pt-2" title={movie.title}>
+                {movie.title}
               </p>
             </div>
           ))}
@@ -106,6 +61,7 @@ export default function LatestEpisodes() {
         <button
           onClick={scrollNext}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-ocean hover:bg-ocean/90 text-white p-2 rounded-full shadow transition"
+          aria-label="Scroll latest releases right"
         >
           <FaChevronRight size={16} />
         </button>

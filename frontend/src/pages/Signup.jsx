@@ -55,7 +55,7 @@ export default function Signup() {
               <input type="checkbox" className="mr-2" />
               <span>
                 I agree to the{" "}
-                <Link to="/terms" className="text-[#00AEEF] underline">
+                <Link to="/tos" className="text-[#00AEEF] underline">
                   Terms of Service
                 </Link>
               </span>

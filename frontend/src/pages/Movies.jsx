@@ -1,32 +1,98 @@
-import React from "react";
-import VerticalNav from "../components/VerticalNav";
-import MoviesHero from "../components/MoviesHero";
-import RecentlyWatched from "../components/RecentlyWatched";
-import LatestReleases from "../components/LatestReleases";
-import MoviesExplorer from "../components/MoviesExplorer";
+import React, { useState, useEffect } from "react";
+import MovieHeroSection from "../components/Movies/MovieHeroSection";
+import RecentlyWatched from "../components/common/RecentlyWatched";
+import LatestReleases from "../components/Movies/LatestReleases";
+import MovieFilters from "../components/Movies/MovieFilters";
+import MovieGrid from "../components/Movies/MovieGrid";
+import {
+  trendingMovie,
+  recentlyWatched,
+  latestReleases,
+  allMovies,
+} from "../data/moviesData";
+import VerticalMoviesNav from "../components/Movies/VerticalMoviesNav";
 
-export default function Movies() {
+export default function MoviesPage() {
+  const [filter, setFilter] = useState({
+    genre: "",
+    lang: "",
+    year: "",
+    rating: "",
+    sortBy: "",
+    search: "",
+  });
+
+  const [filtered, setFiltered] = useState(allMovies);
+
+  const handleInputChange = (e) => {
+    setFilter({ ...filter, [e.target.name]: e.target.value });
+  };
+
+  const applyFilters = () => {
+    let result = allMovies;
+
+    if (filter.search) {
+      result = result.filter((m) =>
+        m.title.toLowerCase().includes(filter.search.toLowerCase())
+      );
+    }
+    if (filter.genre) {
+      result = result.filter((m) => m.genre === filter.genre);
+    }
+    if (filter.lang) {
+      result = result.filter((m) => m.lang === filter.lang);
+    }
+    if (filter.year) {
+      result = result.filter((m) => m.year.toString() === filter.year);
+    }
+    if (filter.rating) {
+      result = result.filter((m) => m.rating >= parseFloat(filter.rating));
+    }
+
+    if (filter.sortBy) {
+      result = [...result].sort((a, b) => {
+        if (filter.sortBy === "title") return a.title.localeCompare(b.title);
+        if (filter.sortBy === "rating") return b.rating - a.rating;
+        if (filter.sortBy === "year") return b.year - a.year;
+        return 0;
+      });
+    }
+
+    setFiltered(result);
+  };
+
+  // Could run applyFilters on filter change automatically:
+  useEffect(() => {
+    applyFilters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter]);
+
   return (
-    <div className="bg-[#181A20] min-h-screen w-full relative overflow-x-hidden">
-      {/* VerticalNav floats and overlaps hero and page */}
-      <VerticalNav />
-      <main className="flex flex-col items-center w-full">
-        <div className="w-full max-w-7xl px-0 md:px-4 lg:px-8">
-          {/* Hero section with negative left margin to overlap under nav on large screens */}
-          <section id="movies-hero" className="relative z-10 mt-0 md:mt-4">
-            <MoviesHero />
-          </section>
-          <section id="recently-watched" className="w-full">
-            <RecentlyWatched />
-          </section>
-          <section id="latest-releases" className="w-full">
-            <LatestReleases />
-          </section>
-          <section id="movies-explorer" className="w-full">
-            <MoviesExplorer />
-          </section>
-        </div>
-      </main>
-    </div>
+    <main className="relative">
+      <VerticalMoviesNav />
+
+      <section id="home" className="min-h-screen">
+        <MovieHeroSection movie={trendingMovie} />
+      </section>
+
+      <section id="continue-watching" className="h-full">
+        <RecentlyWatched movies={recentlyWatched} />
+      </section>
+      <section id="latest" className="h-full">
+        <LatestReleases movies={latestReleases} />
+      </section>
+      <section id="Search" className="h-full">
+        <MovieFilters
+          filter={filter}
+          onChange={handleInputChange}
+          onApply={applyFilters}
+        />
+      </section>
+      <section id="featured" className="min-h-screen">
+        <MovieGrid movies={filtered} />
+      </section>
+      
+      
+    </main>
   );
 }

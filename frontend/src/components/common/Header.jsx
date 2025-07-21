@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Search, Bot } from "lucide-react";
-import logo from "../assets/aniocean_logo.png";
+import logo from "../../assets/aniocean_logo.png";
 
 function SearchModal({ isOpen, onClose }) {
   const inputRef = useRef();

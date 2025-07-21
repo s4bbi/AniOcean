@@ -3,6 +3,7 @@ import {
   MdHome,
   MdAccessTime,
   MdNewReleases,
+  MdSearch,
   MdWhatshot,
   MdStar,
   MdFavorite,
@@ -13,13 +14,11 @@ const sections = [
   { id: "home", icon: <MdHome size={20} />, label: "Home" },
   { id: "continue-watching", icon: <MdAccessTime size={20} />, label: "Continue Watching" },
   { id: "latest", icon: <MdNewReleases size={20} />, label: "Latest" },
-  { id: "trending", icon: <MdWhatshot size={20} />, label: "Trending" },
-  { id: "featured", icon: <MdStar size={20} />, label: "Featured" },
-  { id: "favourites", icon: <MdFavorite size={20} />, label: "Favourites" },
-  { id: "schedule", icon: <MdCalendarToday size={20} />, label: "Schedule" },
+  { id: "Search", icon: <MdWhatshot size={20} />, label: "Search" },
+  { id: "featured", icon: <MdStar size={20} />, label: "All Movies" },
 ];
 
-export default function VerticalNav() {
+export default function VerticalMoviesNav() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {

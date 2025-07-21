@@ -1,6 +1,6 @@
 import React from "react";
 import { ChevronRight, Play, Plus } from "lucide-react";
-import bg from "../assets/images/hero_banner.jpg"; // replace with your actual image
+import bg from "../../assets/images/hero_banner.jpg"; // replace with your actual image
 import { MdPlayArrow, MdAdd } from "react-icons/md";
 
 

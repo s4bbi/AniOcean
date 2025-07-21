@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/aniocean_logo.png";
+import logo from "../../assets/aniocean_logo.png";
 
 export default function Footer() {
   return (
