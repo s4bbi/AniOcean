@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaSlidersH } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
-import CustomDropdown from "./CustomDropdown";
+import CustomDropdown from "../common/CustomDropdown";
 
 export default function MovieFilters({ filter, onChange }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
@@ -58,7 +58,7 @@ export default function MovieFilters({ filter, onChange }) {
           <button
             type="button"
             onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
-            className="flex items-center gap-2 bg-ocean px-4 py-2 rounded-full font-semibold text-white hover:bg-ocean/80 transition whitespace-nowrap"
+            className="flex items-center gap-2 bg-ocean px-4 py-2 rounded-full text-white hover:bg-ocean/80 transition whitespace-nowrap"
             aria-expanded={mobileFiltersOpen}
             aria-controls="mobile-filter-panel"
           >
@@ -93,7 +93,7 @@ function renderFilters(filter, onChange) {
         value={filter.genre}
         onChange={onChange}
         options={[
-          { label: "All Genres", value: "" },
+          { label:"Genre", value: "" },
           { label: "Action", value: "Action" },
           { label: "Adventure", value: "Adventure" },
           { label: "Drama", value: "Drama" },
@@ -107,7 +107,7 @@ function renderFilters(filter, onChange) {
         value={filter.lang}
         onChange={onChange}
         options={[
-          { label: "All Languages", value: "" },
+          { label: "Language", value: "" },
           { label: "Japanese", value: "Japanese" },
           { label: "English", value: "English" },
           // Add more languages here
@@ -120,7 +120,7 @@ function renderFilters(filter, onChange) {
         value={filter.year}
         onChange={onChange}
         options={[
-          { label: "All Years", value: "" },
+          { label: "Year", value: "" },
           { label: "2025", value: "2025" },
           { label: "2024", value: "2024" },
           // Add more years here
@@ -133,7 +133,7 @@ function renderFilters(filter, onChange) {
         value={filter.rating}
         onChange={onChange}
         options={[
-          { label: "All Ratings", value: "" },
+          { label: "Rating", value: "" },
           { label: "9+", value: "9" },
           { label: "8+", value: "8" },
           // Add more ratings here

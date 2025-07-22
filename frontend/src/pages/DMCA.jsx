@@ -17,7 +17,7 @@ export default function TermsOfService() {
       >
         <div className="max-w-7xl mx-auto pt-24 pb-12">
           <h1 className="text-4xl md:text-8xl font-bN leading-tight shadow-md">
-            TERMS OF SERVICE
+            DMCA
           </h1>
           <p className="text-gray-300 max-w-xl font-pR text-sm md:text-base">
             Last updated July 20th, 2025
